@@ -4,13 +4,13 @@ const app = express()
 const mongoose = require('mongoose')
 
 
-const {Web,Clothes,SkinCare,Cosmetic} = require('./models/Model.js')
-const webRouter = require('./routes/webRouter.js')
+const authRouter = require('./routes/authRouter.js')
 
 
 
+app.use(express.json())
 
-app.use('/', webRouter)
+app.use('/api/auth', authRouter);
 
 
 

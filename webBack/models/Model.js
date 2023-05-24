@@ -1,61 +1,32 @@
 const mongoose = require('mongoose')
-const clothesSchema = new mongoose.Schema({
-    clothesName: String,
 
-    clothesColor: String,
 
-    clothesImg: String,
-
-    clothesSize:String
-
+const userSchema = new mongoose.Schema({
+    name: String,
+    email: {
+        type: String,
+        require: true
+    },
+    password: {
+        type: String,
+        require: true
+    },
+    basket: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Clothes' }],
+    card: Number
 })
 
-const skinCareSchema = new mongoose.Schema({
-    skinCareName: String,
-
-    skinCareColor: String,
-
-    skinCareImg: String
-
-})
-
-const cosmeticSchema = new mongoose.Schema({
-    cosmeticsName: String,
-
-    cosmeticsColor: String,
-
-    cosmeticsImg: String
-
-
-})
-
-const webSchema = new mongoose.Schema({
-
-    itemName: String,
-
+const itemSchema = new mongoose.Schema({
     img: String,
-
-    clothes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Clothes' }],
-
-    cosmetics:[{type:mongoose.Schema.Types.ObjectId,ref:'Clothes'}],
-
-    skinCare:[{type:mongoose.Schema.Types.ObjectId,ref:'SkinCare'}],
-
-    category:String,
-
-
+    title: String,
+    category: String,
+    country: String,
+    manufacturer: String,
     price: Number,
-
-    rating: Number,
-
-
-
-
+    sale: Number
 })
+
 
 module.exports = {
-    Web: mongoose.model('Web', webSchema),
-    Clothes: mongoose.model('Clothes', clothesSchema),
-    SkinCare: mongoose.model('SkinCare', skinCareSchema),
-    Cosmetic:mongoose.model('Cosmetics',cosmeticSchema)
+    User: mongoose.model('User', userSchema),
+    Item: mongoose.model('Item', itemSchema)
 }
