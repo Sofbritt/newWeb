@@ -2,17 +2,20 @@ const express = require('express')
 require('dotenv').config()
 const app = express()
 const mongoose = require('mongoose')
+const cookieParser = require('cookie-parser')
 
 app.use(express.json())
+app.use(cookieParser())
+
 
 const authRouter = require('./routes/authRouter.js')
-
-
-
+const itemRouter = require('./routes/itemRouter.js')
 
 
 
 app.use('/api/auth', authRouter);
+app.use('/api/item', itemRouter);
+
 
 
 
