@@ -3,12 +3,14 @@ require('dotenv').config()
 const app = express()
 const mongoose = require('mongoose')
 
+app.use(express.json())
 
 const authRouter = require('./routes/authRouter.js')
 
 
 
-app.use(express.json())
+
+
 
 app.use('/api/auth', authRouter);
 

@@ -22,6 +22,10 @@ const login = async (req, res) => {
         if (!user) {
             return res.json({ message: 'Wrong email' })
         }
+        const isCorrect = await bcrypt.compare(req.body.password, user.password)
+        if (isCorrect) {
+            return res.json({ message: 'Wrong password' })
+        }
 
 
 
