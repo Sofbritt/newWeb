@@ -2,6 +2,8 @@ body {
     background-color: pink;
 }
 
+/* //header */
+
 .header {
     display: flex;
     justify-content: space-around;
@@ -46,7 +48,7 @@ body {
     height: 45px;
     border-radius: 20px;
     border: none;
-    background-color: rgb(236, 178, 198);
+    background-color: rgb(231, 90, 168);
     font-size: medium;
 }
 
@@ -61,6 +63,8 @@ body {
 
 
 
+/* //carousel */
+
 
 .carousel {
     width: 700px;
@@ -69,3 +73,89 @@ body {
 }
 
 
+
+
+
+/* //special offers */
+
+
+.special-offers {
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    color: rgb(194, 41, 125);
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.offersImg {
+    width: 320px;
+    height: 325px;
+}
+
+.add {
+    width: 245px;
+    height: 35px;
+    background-color: rgb(255, 142, 204);
+    border: none;
+}
+
+.offers {
+    margin-left: 15px;
+    gap: 15px;
+}
+
+.see-more-but {
+    width: 150px;
+    height: 35px;
+    background-color: rgb(255, 142, 204);
+    margin-top: 25px;
+    margin-left: 45%;
+    border: none;
+}
+
+/* ///seasons-offers */
+
+.seasons-title {
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    color: rgb(194, 41, 125);
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.seasons-offers {
+    margin-left: 20px;
+}
+
+
+
+
+
+
+/* ///// NEWS CSS */
+
+.news-img {
+    width: 320px;
+    height: 325px;
+}
+
+.show-moreBtn {
+    color: red;
+    border: none;
+    background-color: rgb(255, 161, 219);
+}
+
+.arrowRight-icon {
+    color: red;
+}
+
+.new-title {
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    color: rgb(194, 41, 125);
+    font-size: 50px;
+    font-weight: bold;
+}
