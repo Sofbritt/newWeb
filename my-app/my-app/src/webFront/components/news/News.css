@@ -1,0 +1,28 @@
+.news-img {
+    width: 320px;
+    height: 325px;
+}
+
+.show-moreBtn {
+    color: red;
+    border: none;
+    background-color: rgb(255, 161, 219);
+}
+
+.arrowRight-icon {
+    color: red;
+}
+
+.new-title {
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    color: rgb(194, 41, 125);
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.news {
+    margin-left: 25px;
+    gap: 10px;
+}

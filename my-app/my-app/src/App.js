@@ -1,7 +1,9 @@
 // import './App.css';
-import './webFront/Header.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Web from './webFront/Web.js'
+import Web from './webFront/components/mainComponent/Web.js'
+import Details from './webFront/components/details/Details';
+import Cosmetics from './webFront/components/cosmetics/Cosmetics';
+import Clothes from './webFront/components/clothes/Clothes';
 
 
 function App() {
@@ -10,6 +12,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Web />} />
+          <Route path='/productDetails' element={<Details />} />
+          <Route path='/cosmetics' element={<Cosmetics />} />
+          <Route path='/clothes' element={<Clothes />} />
 
         </Routes>
       </BrowserRouter>

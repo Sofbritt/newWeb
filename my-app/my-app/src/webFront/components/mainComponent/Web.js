@@ -1,12 +1,18 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as Icon from "react-bootstrap-icons";
-import Carousel from './Carousel';
-import SpecialOffers from './SpecialOffers';
-import SeasonsOffers from './SeasonsOffers';
-import Cosmetics from './Cosmetics';
-import News from './News';
-
+import Carousel from '../carousel/Carousel';
+import SpecialOffers from '../specialOffers/SpecialOffers';
+import SeasonsOffers from '../seasonsOffers/SeasonsOffers';
+import Cosmetics from '../cosmetics/Cosmetics';
+import News from '../news/News';
+import Clothes from '../clothes/Clothes';
+import SkinCare from '../scincare/SkinCare';
+import Feedback from '../feedback/Feedback';
+import Others from '../others/Others';
+import Details from '../details/Details';
+import { Link } from 'react-router-dom';
+import "./Header.css";
 
 function Web() {
     return <div>
@@ -25,12 +31,21 @@ function Web() {
 
         </div> <br />
 
-
+       
         <Carousel />
         <SpecialOffers />
         <SeasonsOffers />
         <Cosmetics />
+        <Clothes />
+        <SkinCare />
+        <Others />
         <News />
+        <Feedback />
+        <Link className='link-to-details' to={'/productDetails'}>
+        Details
+        </Link>
+
+
 
     </div>
 }

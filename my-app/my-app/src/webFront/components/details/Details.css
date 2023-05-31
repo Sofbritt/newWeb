@@ -1,0 +1,23 @@
+.link-to-details{
+    font-size: 30px;
+}
+
+
+.details{
+width: 600px;
+
+margin-left: 30%;
+}
+
+.details-img{
+    width: 450px;
+    height: 400px;
+}
+.add-in-basket{
+    background-color: palevioletred;
+    color: white;
+    width: 200px;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+}

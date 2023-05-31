@@ -1,0 +1,73 @@
+
+.mainDiv-add {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.carousel {
+    width: 900px;
+    height: 400px;
+    margin-left: 10px;
+}
+
+
+
+
+.carouselImgs{
+    height: 460px;
+}
+
+.carosel-btn {
+    background-color: red;
+    border: none;
+    color: white;
+    width: 170px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: rgb(255, 142, 204);
+
+}
+
+.second-add {
+    width: 250px;
+    height: 400px;
+    padding: 5px;
+    box-shadow: 4px 3px 18px 1px rgba(0, 0, 0, 0.63);
+}
+
+.addImg {
+    width: 165px;
+    height: 220px;
+    margin-bottom: 60px;
+    margin-left: 40px;
+
+
+}
+
+.titleOfAdd {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    color: rgb(194, 41, 125);
+}
+
+.price-of-add {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    color: rgb(194, 41, 125);
+    ;
+}
+
+.addBtn {
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    background-color: rgb(255, 142, 204);
+    margin-left: 55px;
+}
+
+
+

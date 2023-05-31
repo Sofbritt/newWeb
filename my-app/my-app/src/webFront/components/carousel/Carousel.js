@@ -1,65 +1,60 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Carousel from 'react-bootstrap/Carousel';
+import "./Carousel.css";
 
 
-
-function Carousel() {
+function UncontrolledExample() {
     return (
+        <div className='mainDiv-add'>
+          
+            <Carousel>
 
-        <div>
+                <Carousel.Item>
+                <button className='carosel-btn'>See More</button>
+                    <img
+                        className="d-block w-100 carouselImgs"
+                        src="https://i.etsystatic.com/17042832/r/il/4b6157/4452681708/il_fullxfull.4452681708_jcc2.jpg"
+                        alt="First slide"
 
-            <div className='carousel'>
+                    />
+                    <Carousel.Caption>
 
-                <div id="carouselExampleIndicators" class="carousel slide" data-mdb-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button
-                            type="button"
-                            data-mdb-target="#carouselExampleIndicators"
-                            data-mdb-slide-to="0"
-                            class="active"
-                            aria-current="true"
-                            aria-label="Slide 1"
-                        ></button>
-                        <button
-                            type="button"
-                            data-mdb-target="#carouselExampleIndicators"
-                            data-mdb-slide-to="1"
-                            aria-label="Slide 2"
-                        ></button>
-                        <button
-                            type="button"
-                            data-mdb-target="#carouselExampleIndicators"
-                            data-mdb-slide-to="2"
-                            aria-label="Slide 3"
-                        ></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src='https://nypost.com/wp-content/uploads/sites/2/2021/09/Best-Clear-Lip-Glosses.png?w=1024' class="d-block w-100" alt="Wild Landscape" />
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://img.ltwebstatic.com/images3_pi/2023/05/18/168437919102ddff3d2d45ac3ec1e8a066e013b3e1_thumbnail_600x.webp" class="d-block w-100" alt="Camera" />
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp" class="d-block w-100" alt="Exotic Fruits" />
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                <button className='carosel-btn'>See More</button>
+                    <img
+                        className="d-block w-100 carouselImgs"
+                        src="https://hips.hearstapps.com/hmg-prod/images/hbz-clear-lip-gloss-index-1594043471.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*"
+                        alt="Second slide"
+                    />
 
-                </div>
+                    <Carousel.Caption>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                <button className='carosel-btn'>See More</button>
+                    <img
+                        className="d-block w-100 carouselImgs"
+                        src="https://fashionista.com/.image/t_share/MTI3OTEyMDExNjM0ODQ2MzM5/titlejpg.jpg"
+                        alt="Third slide"
+                    />
+
+                    <Carousel.Caption>
+
+                    </Carousel.Caption>
+                </Carousel.Item>
+            </Carousel>
+            <div className='second-add'>
+                <img className='addImg' src='https://1sa.com.ua/media/catalog/product/cache/1/image/1000x1231/9df78eab33525d08d6e5fb8d27136e95/t/m/tmp_9957_1.jpg' /> <br />
+                <h6 className='titleOfAdd'>La Roche-Posay Effaclar</h6> <h6 className='price-of-add'> 7,700 dr</h6>
+                <button className='addBtn'>Add in Basket </button>
 
             </div>
         </div>
 
-
-    )
+    );
 }
 
-export default Carousel;
+export default UncontrolledExample;
