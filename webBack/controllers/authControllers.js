@@ -5,6 +5,7 @@ const register = async (req, res) => {
 
     try {
         const salt = await bcrypt.genSalt(10)
+        console.log(req.body)
         const hashedPassword = await bcrypt.hash(req.body.password, salt)
 
         const user1 = new User({ ...req.body, password: hashedPassword });
@@ -27,7 +28,9 @@ const login = async (req, res) => {
         if (!user) {
             return res.json({ message: 'Wrong email' })
         }
-        const isCorrect = await bcrypt.compare(req.body.password, user.password)
+        console.log(req.body)
+        const isCorrect = bcrypt.compareSync(req.body.password, user.password)
+        console.log(isCorrect)
         if (!isCorrect) {
             return res.json({ message: 'Wrong password' })
         }

@@ -3,9 +3,13 @@ require('dotenv').config()
 const app = express()
 const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser')
+const cors = require('cors')
 
 app.use(express.json())
 app.use(cookieParser())
+app.use(cors({
+    origin: '*'
+}))
 
 
 const authRouter = require('./routes/authRouter.js')
