@@ -37,4 +37,29 @@
     background-color: pink;
     border-radius: 20px;
     margin-top: 20px;
+    color: white;
+}
+
+.feedback-icons{
+ display: flex;
+ justify-content: center;
+}
+
+.delevery-icons{
+    width: 300px;
+    height: 80px;
+    color: rgb(110, 105, 105);
+}
+.delevery-icons:hover{
+    color: palevioletred;
+}
+
+.delivry-titles{
+    display: flex;
+    justify-content: space-around;
+    color: gray;
+    text-decoration: none;
+}
+.delivry-titles:hover{
+    color: palevioletred;
 }

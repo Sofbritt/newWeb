@@ -1,19 +1,19 @@
-
 .mainDiv-add {
     display: flex;
     justify-content: space-evenly;
+    box-shadow: 4px 3px 18px 1px rgba(0, 0, 0, 0.63);
 }
 
 .carousel {
     width: 900px;
-    height: 400px;
+    height: 460px;
     margin-left: 10px;
 }
 
 
 
 
-.carouselImgs{
+.carouselImgs {
     height: 460px;
 }
 
@@ -68,6 +68,3 @@
     background-color: rgb(255, 142, 204);
     margin-left: 55px;
 }
-
-
-

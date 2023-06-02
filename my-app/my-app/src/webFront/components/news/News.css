@@ -22,7 +22,18 @@
     font-weight: bold;
 }
 
+.news-img {
+    width: 270px;
+    height: 270px;
+}
+
 .news {
     margin-left: 25px;
     gap: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.news-title{
+    font-size: 25px;
 }

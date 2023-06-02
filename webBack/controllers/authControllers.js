@@ -38,7 +38,7 @@ const login = async (req, res) => {
         const token = jwt.sign({ id: user._id }, process.env.JWT)
         console.log(token)
         console.log(_docsss)
-        const { password, ...others } = user._docsss
+        const { password, ...others } = user._doc
 
         res
             .cookie("access_token", token, {

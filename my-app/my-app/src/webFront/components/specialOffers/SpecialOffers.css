@@ -8,8 +8,8 @@
 }
 
 .offersImg {
-    width: 320px;
-    height: 325px;
+    width: 270px;
+    height: 270px;
 }
 
 .add {
@@ -17,11 +17,31 @@
     height: 35px;
     background-color: rgb(255, 142, 204);
     border: none;
+   
+}
+
+.offersTitle {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+
+}
+
+.price {
+    font-size: 20px;
+    color: black;
+    text-decoration-line: none;
 }
 
 .offers {
     margin-left: 25px;
     gap: 15px;
+ 
+}
+
+.offersProducts {
+    display: flex;
+    justify-content: space-between;
 }
 
 .see-more-but {
@@ -31,4 +51,14 @@
     margin-top: 25px;
     margin-left: 45%;
     border: none;
+  
+}
+.card{
+    box-shadow: -2px 2px 13px 5px rgba(143,0,70,0.6);
+}
+
+.saleImg{
+    width: 80px;
+    height: 50px;
+    position: absolute;
 }

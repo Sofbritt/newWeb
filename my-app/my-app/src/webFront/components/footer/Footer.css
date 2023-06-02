@@ -1,0 +1,37 @@
+.footer {
+    box-shadow: -1px 5px 45px 19px rgba(0,0,0,0.29);
+}
+
+.footrs-menu {
+
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.titles-of-footer {
+    color: rgb(206, 59, 108);
+}
+
+.callBtn {
+    background-color: rgb(255, 143, 190);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    width: 150px;
+    height: 40px;
+}
+
+.phone-number {
+    background-color: rgb(206, 59, 108);
+    border-radius: 10px;
+    padding: 5px;
+}
+.footer-logos{
+    width: 140px;
+    height: 65px;
+}
+.footerLinks{
+    text-decoration: none;
+    color: black;
+}

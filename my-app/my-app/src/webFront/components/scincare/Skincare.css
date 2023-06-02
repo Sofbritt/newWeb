@@ -1,13 +1,26 @@
-.skincare{
+.skincare {
     margin-left: 25px;
     gap: 10px;
+    
 }
 
-.skincare-title{
+.skincare-title {
     margin-top: 90px;
     display: flex;
     justify-content: center;
     color: rgb(194, 41, 125);
     font-size: 50px;
     font-weight: bold;
+}
+
+.products {
+    display: flex;
+    justify-content: space-around;
+ 
+}
+
+.skincare-name {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
 }

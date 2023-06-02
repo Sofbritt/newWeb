@@ -11,3 +11,9 @@
     margin-left: 20px;
     gap: 10px;
 }
+
+.clothes-name{
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+}

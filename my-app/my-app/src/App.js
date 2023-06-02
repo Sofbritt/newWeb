@@ -4,6 +4,7 @@ import Web from './webFront/components/mainComponent/Web.js'
 import Details from './webFront/components/details/Details';
 import Cosmetics from './webFront/components/cosmetics/Cosmetics';
 import Clothes from './webFront/components/clothes/Clothes';
+import News from './webFront/components/news/News'
 
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
           <Route path='/productDetails' element={<Details />} />
           <Route path='/cosmetics' element={<Cosmetics />} />
           <Route path='/clothes' element={<Clothes />} />
+          <Route path="/news" element={<News/>} />
+       
 
         </Routes>
       </BrowserRouter>
