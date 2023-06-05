@@ -18,14 +18,14 @@ function Web() {
     return <div>
         <Header /> <br />
         <Carousel />
-        <SpecialOffers />
-        <SeasonsOffers />
-        <Cosmetics />
+        <SpecialOffers/>
+         <SeasonsOffers />
+         <Cosmetics />
         <Clothes />
         <SkinCare />
         <Others />
         <News />
-        <Feedback />
+        <Feedback /> 
         <Link className='link-to-details' to={'/productDetails'}>
             Details
         </Link>
