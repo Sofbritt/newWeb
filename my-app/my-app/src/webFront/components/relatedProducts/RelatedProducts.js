@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './Others.css'
 import Carousel from "react-multi-carousel";
- import "react-multi-carousel/lib/styles.css";
+import "react-multi-carousel/lib/styles.css";
+import './RelatedProducts.css';
 
 const responsive = {
     superLargeDesktop: {
@@ -24,40 +24,42 @@ const responsive = {
     },
 };
 
-function Others() {
+function RelatedProducts() {
     let arr = [
         {
             id: 1,
-            title: "WHITE & PINK Y2K DRESS",
-            img: "https://shop.beyondretro.com/cdn/shop/products/beyond-retro-label-womens-white-halter-dress-1-E00922871_1512x.jpg?v=1679778582",
-            price: "60",
-            sale: "50",
+            title: "FLORAL PRINT BLUE DRESS ",
+            img: "https://shop.beyondretro.com/cdn/shop/products/beyond-retro-label-womens-floral-print-blue-dress-1-E00897474_1512x.jpg?v=1685653545",
+            price: "45",
+            sale: "37",
         },
         {
             id: 2,
-            title: "LIGHT BLUE Y2K TOP ",
-            img: "https://shop.beyondretro.com/cdn/shop/products/beyond-retro-label-womens-abstract-printed-top-1-E00840753_720x.jpg?v=1679951097",
-            price: "40",
-            sale: "35",
+            title: "LIGHT BLUE DRESS",
+            img: "https://shop.beyondretro.com/cdn/shop/products/beyond-retro-label-womens-asymmetric-light-blue-dress-1-E00897737_d7b749c4-9cc7-4bce-8b36-9f38a55ec105_720x.jpg?v=1685604669",
+            price: "45",
+            sale: "40",
         },
         {
             id: 3,
-            title: "Y2K  JEANS",
-            img: "https://shop.beyondretro.com/cdn/shop/products/beyond-retro-label-womens-zip-front-straight-fit-jeans-1-E00822278_720x.jpg?v=1674680515",
-            price: "55",
-            sale: "45",
+            title: "HARLEY DAVIDSON  Y2K VEST",
+            img: "https://shop.beyondretro.com/cdn/shop/products/beyond-retro-label-womens-harley-davidson-embroidered-vest-1-E00825495_d2144ef6-837b-48a0-81ba-9695b43e5917_720x.jpg?v=1685511633",
+            price: "45",
+            sale: "38",
         },
         {
             id: 4,
-            title: "DENIM MAXI SKIRT",
-            img: "https://shop.beyondretro.com/cdn/shop/products/beyond-retro-label-womens-indigo-denim-skirt-1-E00867522_1512x.jpg?v=1685221570",
-            price: "35",
-            sale: "25",
-        },
+            title: "Y2K BAGUETTE BAG ",
+            img: "https://shop.beyondretro.com/cdn/shop/products/beyond-retro-label-womens-diamonte-detail-y2k-leather-baguette-bag-1-E00916387_1512x.jpg?v=1682456919",
+            price: "47",
+            sale: "30",
+        }
+
+        
     ];
     return (
         <div>
-        <h1 className="special-offers">Others</h1>
+        <h1 className="special-offers">Related  Products</h1>
         <div className="offers ">
             <Carousel showDots={false} responsive={responsive} className="products">
                 {arr.map((item) => (
@@ -78,12 +80,8 @@ function Others() {
                 ))}
             </Carousel>
         </div>
-        <div className="see-more">
-            <button className="see-more-but">See more</button>
-        </div>
     </div>
-
     )
 }
 
-export default Others;
+export default RelatedProducts;

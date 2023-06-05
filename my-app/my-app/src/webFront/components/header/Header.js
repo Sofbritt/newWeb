@@ -16,9 +16,9 @@ function Header() {
                         show === true
                             &&
                             <div className="menues" >
-                                <h6 className="menu-links">Clotes</h6>
-                                <h6 className="menu-links">Cosmetics</h6>
-                                <h6 className="menu-links">SkinCare</h6>
+                                <h5 className="menu-links">Clotes</h5>
+                                <h5 className="menu-links">Cosmetics</h5>
+                                <h5 className="menu-links">SkinCare</h5>
                             </div>
                            
                     }
