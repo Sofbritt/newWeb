@@ -2,6 +2,8 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
 import "./Carousel.css";
+import { Link } from 'react-router-dom';
+import * as Icon from "react-bootstrap-icons";
 
 let arr = [
     "https://i.etsystatic.com/17042832/r/il/4b6157/4452681708/il_fullxfull.4452681708_jcc2.jpg",
@@ -11,10 +13,11 @@ let arr = [
 
 
 function UncontrolledExample() {
+    let nextIcon = <Icon.ArrowRightCircleFill className="next-prev" />
+    let prevIcon = <Icon.ArrowLeftCircleFill className="next-prev" />
     return (
-        <div className='mainDiv-add'>
-
-            <Carousel  className='carousel'>
+        <div className="mainDiv-add">
+            <Carousel className="carousel" prevIcon={prevIcon} nextIcon={nextIcon}>
                 {arr.map((item, index) => (
                     <Carousel.Item key={index}>
                         <img
@@ -24,20 +27,29 @@ function UncontrolledExample() {
                         />
                         <Carousel.Caption>
                             <button className="carosel-btn">See More</button>
-
                         </Carousel.Caption>
                     </Carousel.Item>
                 ))}
             </Carousel>
-            <div className='second-add'>
-              
-                <img className='addImg' src='https://1sa.com.ua/media/catalog/product/cache/1/image/1000x1231/9df78eab33525d08d6e5fb8d27136e95/t/m/tmp_9957_1.jpg' /> <br />
-                <h6 className='titleOfAdd'>La Roche-Posay Effaclar</h6> <h6 className='price-of-add'> 7,700 dr</h6>
-                <button className='addBtn'>Add in Basket </button>
-
+            <div className="card card-carousel">
+                <Link to={"/productDetails"} className="card-link">
+                    <img
+                        alt=""
+                        src="https://png.pngtree.com/png-vector/20221003/ourmid/pngtree-15-discount-tag-png-image_6262158.png"
+                        className="saleImg"
+                    />
+                    <img
+                        alt=""
+                        src='https://static.thcdn.com/images/large/original//productimg/1600/1600/11434754-8895036866079892.jpg'
+                        className="offersImg"
+                    />
+                    <h2 className="offersTitle">La Roche Posay</h2>
+                    <h3 className="price">65 $</h3>
+                    <h3 className="price-sale">50 $</h3>
+                    <button className="add">Add in Basket</button>
+                </Link>
             </div>
         </div>
-
     );
 }
 

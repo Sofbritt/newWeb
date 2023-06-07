@@ -1,5 +1,5 @@
 .footer {
-    box-shadow: -1px 5px 45px 19px rgba(0,0,0,0.29);
+    box-shadow: 4px 3px 18px 1px rgba(0, 0, 0, 0.63);
 }
 
 .footrs-menu {
@@ -23,7 +23,7 @@
 }
 
 .phone-number {
-    background-color: rgb(206, 59, 108);
+    background: rgb(255, 143, 190);
     border-radius: 10px;
     padding: 5px;
 }

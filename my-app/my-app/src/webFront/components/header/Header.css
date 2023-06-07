@@ -1,27 +1,52 @@
-
 .header {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 120px;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    z-index: 10;
     gap: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .13);
     background-color: rgb(255, 243, 250);
-    box-shadow: -2px 7px 14px -4px rgba(0, 0, 0, 0.65);
 
 }
 
 .logo {
-    width: 120px;
+    width: 150px;
+    mix-blend-mode: darken;
     height: 70px;
 }
 
+
+
 .search-inp {
-    width: 330px;
+    border: 1px solid #cfcfcf;
+    padding: 15px 35px;
+    font-size: 18px;
+    border-radius: 30px 0 0 30px;
+
+}
+
+.search {
+    width: 355px;
     height: 55px;
     border-radius: 25px;
-    border: none;
-    gap: 20px;
+    display: flex;
+}
+
+.search div {
+    border: 1px solid #cfcfcf;
+    border-radius: 0px 30px 30px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.search-inp:focus {
+    outline: none;
 }
 
 .search-icon {
@@ -29,24 +54,33 @@
     height: 25px;
 }
 
-.menu:hover {
-    color: rgb(207, 27, 132);
+.menu{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.menues{
+
+.menues {
     width: 220px;
     height: 200px;
-    border: 1px solid black;
+    padding: 10px 0px;
     border-radius: 10px;
     position: absolute;
-    margin-top: 50px;
     background-color: white;
     z-index: 9;
-    
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.653);
+    overflow-y: auto;
+
 }
-.menu-links{
-    margin-left: 25px;
+
+.menu-links {
     font-weight: bold;
+    padding: 0px 10px;
 }
+
+.menu-links:hover {
+    color: white;
+    background-color: rgb(250, 186, 207);
+}
+
 .basket-icon {
     width: 90px;
     height: 25px;
@@ -59,14 +93,20 @@
     border: none;
     background-color: rgb(231, 90, 168);
     font-size: medium;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .choose-language {
     width: 60px;
     height: 25px;
-    background-color: rgb(159, 186, 212);
+    background-color: rgb(255, 243, 250);
     border: none;
+    outline: none;
     font-size: medium;
+}
+
+.choose-language option {
+    border-radius: 10px;
 }
 
 /* @media(max-width:500px) {

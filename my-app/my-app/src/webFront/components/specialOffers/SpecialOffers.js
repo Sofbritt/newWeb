@@ -57,31 +57,31 @@ function SpecialOffers() {
 
     return (
         <div>
-            <h1 className="special-offers">Special Offers</h1>
-            <div className="offers ">
-                <Carousel showDots={false} responsive={responsive} className="products">
-                    {arr.map((item) => (
-                        <div className="card">
-                            <Link to={"/productDetails"} className="card-link">
-                                <img
-                                    alt=""
-                                    src="https://png.pngtree.com/png-vector/20221003/ourmid/pngtree-15-discount-tag-png-image_6262158.png"
-                                    className="saleImg"
-                                />
-                                <img alt="" src={item.img} className="offersImg" />
-                                <h2 className="offersTitle">{item.title}</h2>
-                                <h3 className="price">{item.price} $</h3>
-                                <h3 className="price-sale">{item.sale} $</h3>
-                                <button className="add">Add in Basket</button>
-                            </Link>
-                        </div>
-                    ))}
-                </Carousel>
-            </div>
-            <div className="see-more">
-                <button className="see-more-but">See more</button>
-            </div>
+        <h1 className="special-offers">Special Offers</h1>
+        <div className="offers ">
+            <Carousel showDots={false} responsive={responsive} className="products">
+                {arr.map((item) => (
+                    <div className="card">
+                        <Link to={"/productDetails"} className="card-link">
+                            <img
+                                alt=""
+                                src="https://png.pngtree.com/png-vector/20221003/ourmid/pngtree-15-discount-tag-png-image_6262158.png"
+                                className="saleImg"
+                            />
+                            <img alt="" src={item.img} className="offersImg" />
+                            <h2 className="offersTitle">{item.title}</h2>
+                            <h3 className="price">{item.price} $</h3>
+                            <h3 className="price-sale">{item.sale} $</h3>
+                            <button className="add">Add in Basket</button>
+                        </Link>
+                    </div>
+                ))}
+            </Carousel>
         </div>
+        <div className="see-more">
+            <button className="see-more-but">See more</button>
+        </div>
+    </div>
     )
 
 
