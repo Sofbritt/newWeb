@@ -66,7 +66,7 @@ function Cosmetics() {
                             <Link to={"/productDetails"} className="card-link">
                                 <img
                                     alt=""
-                                    src="https://png.pngtree.com/png-vector/20221003/ourmid/pngtree-15-discount-tag-png-image_6262158.png"
+                                    src=""
                                     className="saleImg"
                                 />
                                 <img alt="" src={item.img} className="offersImg" />
