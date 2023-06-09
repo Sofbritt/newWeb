@@ -8,15 +8,16 @@ import Clothes from '../clothes/Clothes';
 import SkinCare from '../scincare/SkinCare';
 import Feedback from '../feedback/Feedback';
 import Others from '../others/Others';
-import Header from '../header/Header'
 import Details from '../details/Details';
-import Footer from '../footer/Footer'
-import { Link } from 'react-router-dom';
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
+
 
 
 function Web() {
     return <div>
-        <Header /> <br />
+        
+       
         <Carousel />
         <SpecialOffers/>
          <SeasonsOffers />
@@ -26,10 +27,7 @@ function Web() {
         <Others />
         <News />
         <Feedback /> 
-        <Link className='link-to-details' to={'/productDetails'}>
-            Details
-        </Link>
-        <Footer />
+   
 
 
 

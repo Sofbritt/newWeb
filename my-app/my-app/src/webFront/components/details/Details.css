@@ -1,71 +1,188 @@
 .link-to-details {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .link {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  padding-left: 30px;
+  margin-top: 120px;
 }
 
-.linkPath {
-    color: palevioletred;
-    text-decoration: none;
+.link-titles {
+  background-color: palevioletred;
+  padding: 2px 13px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  position: relative;
+  text-decoration: none;
+  outline: 6px solid white;
+}
+
+.link-titles:hover {
+  color: white;
+}
+
+.arrow-left {
+  font-size: 70px;
+  padding-left: 30px;
+  text-decoration: none;
+  color: grey;
 }
 
 .details {
-    width: calc(55% - 50px);
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  gap: 100px;
+  margin-top: 30px;
 }
 
 .details-info {
-    margin: 0;
-    padding: 0;
-    outline: none;
-    box-sizing: border-box;
-    font-family: Segoe UI, sans-serif;
-    margin-left: 25%;
-
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: Segoe UI, sans-serif;
+  width: 45%;
 }
 
 .details-img {
-    width: 400px;
-    height: 400px;
-    overflow-clip-margin: content-box;
-    cursor: crosshair;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .33);
-    border-radius: 15px;
+  width: 40%;
+  height: 340px;
+  cursor: crosshair;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.33);
+  border-radius: 15px;
 }
 
 .add-in-basket {
-    background-color: palevioletred;
-    color: white;
-    width: 200px;
-    height: 40px;
-    border-radius: 15px;
-    border: none;
+  background-color: palevioletred;
+  color: white;
+  width: 200px;
+  height: 40px;
+  border-radius: 15px;
+  border: none;
 }
 
 .price {
-    text-align: center;
-    margin-bottom: 10px;
-    margin-top: 16px;
-    font-family: Segoe UI, sans-serif;
-    color: black;
-    text-decoration: line-through;
-    font-weight: 700;
-    font-size: 26px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 16px;
+  font-family: Segoe UI, sans-serif;
+  color: black;
+  text-decoration: line-through;
+  font-weight: 700;
+  font-size: 26px;
 }
 
-
 .price-sale {
-    text-align: center;
-    margin-bottom: 10px;
-    margin-top: 16px;
-    font-family: Segoe UI, sans-serif;
-    color: #f26d26;
-    font-weight: 700;
-    font-size: 28px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 16px;
+  font-family: Segoe UI, sans-serif;
+  color: #f26d26;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.name-of-product {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.titles-of-details {
+  display: flex;
+  margin-bottom: 27px;
+}
+
+.titles-of-details p {
+  width: 50%;
+  font-size: 18px;
+}
+
+.p-of-category {
+  font-weight: 700;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.counter {
+  display: flex;
+  gap: 20px;
+}
+
+.counter>div {
+  width: 50%;
+}
+
+.counter-div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.count-btn {
+  color: #fff;
+  cursor: pointer;
+  height: calc(100% - 12px);
+  display: inline-flex;
+  height: 30px;
+  min-width: 30px;
+  font-size: 24px;
+  border: none;
+  background: palevioletred;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  align-items: center;
+  border-radius: 50%;
+  padding-bottom: 6px;
+  justify-content: center;
+}
+
+.prices-div {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.prices {
+  font-size: 24px;
+  color: palevioletred;
+  font-weight: 700;
+  margin: 0;
+}
+
+.last-price {
+  text-align: center;
+  font: 15px;
+  color: rgb(224, 56, 112);
+  margin: 0;
+}
+
+.prices-sale {
+  font-size: 24px;
+  color: #8d8d8d;
+  text-decoration: line-through;
+  font-weight: 700;
+  margin: 0;
+}
+
+.latest-price {
+  text-align: center;
+  font-size: 24px;
+  color: rgb(224, 56, 112);
+  font-weight: 700;
+  margin: 0;
+}
+
+.price-main-div {
+  text-align: center;
+}
+
+.short-arrow {
+  font-size: 30px;
 }
