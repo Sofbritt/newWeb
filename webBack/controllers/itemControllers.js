@@ -14,8 +14,11 @@ const itemCreate = async (req, res) => {
 
 const getItems = async (req, res) => {
     try {
-        const getItem1 = await Item.find(req.query)
+        const getItem1 = await Item.find({
+            category: req.query.category
+        })
         res.status(200).json(getItem1)
+        console.log(getItem1)
     } catch (e) {
         res.status(400).json({ message: e.message })
     }
