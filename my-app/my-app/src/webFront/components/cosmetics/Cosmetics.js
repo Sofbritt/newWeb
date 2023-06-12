@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "./Cosmetics.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 
 const responsive = {
@@ -26,47 +28,25 @@ const responsive = {
 };
 
 function Cosmetics() {
-    let arr = [
-        {
-            id: 1,
-            title: "FENTY GLOW",
-            img: "https://londonlovesbeauty.com/wp-content/uploads/2022/11/fenty-beauty-lip-luminizer-fenty-beauty-gloss-bomb-universal-lip-luminizer-sweet-mouth-13617046945886.jpg",
-            price: "34",
-            sale: "25",
-        },
-        {
-            id: 2,
-            title: "FENTY HIGHLIGHTER",
-            img: "https://cdn.shopify.com/s/files/1/0079/5384/2257/products/diamond-bomb.png?v=1662558134",
-            price: "50",
-            sale: "40",
-        },
-        {
-            id: 3,
-            title: "GLOSS BOMB ICE",
-            img: "https://www.sephora.com/productimages/sku/s2616613-main-zoom.jpg?imwidth=315",
-            price: "30",
-            sale: "24",
-        },
-        {
-            id: 4,
-            title: "GLOS LIP LUMINIZER",
-            img: "https://media.ulta.com/i/ulta/2592391?w=1020&h=1020",
-            price: "32",
-            sale: "27",
-        },
-    ];
+    const [data, setData] = useState([]);
+
+
+    useEffect(() => {
+        axios.get("http://localhost:4500/api/item?category=skincare")
+            .then((response) => setData(response.data))
+    })
+
     return (
         <div>
             <h1 className="special-offers">Cosmetics</h1>
             <div className="offers ">
                 <Carousel showDots={false} responsive={responsive} className="products">
-                    {arr.map((item) => (
+                    {data.map((item) => (
                         <div className="card">
                             <Link to={"/productDetails"} className="card-link">
                                 <img
                                     alt=""
-                                    src=""
+                                    src="https://png.pngtree.com/png-vector/20221003/ourmid/pngtree-15-discount-tag-png-image_6262158.png"
                                     className="saleImg"
                                 />
                                 <img alt="" src={item.img} className="offersImg" />

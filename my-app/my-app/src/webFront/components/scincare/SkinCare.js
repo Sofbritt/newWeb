@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import './Skincare.css'
 import Carousel from "react-multi-carousel";
  import "react-multi-carousel/lib/styles.css";
+ import { useEffect, useState } from "react";
+ import axios from "axios";
 
 const responsive = {
     superLargeDesktop: {
@@ -25,42 +27,20 @@ const responsive = {
 };
 
 function SkinCare() {
-    let arr = [
-        {
-            id: 1,
-            title: "SERUM CLEANSER CREAM",
-            img: "https://m.media-amazon.com/images/I/61YprWhNcCL._AC_UF1000,1000_QL80_.jpg",
-            price: "80",
-            sale: "65",
-        },
-        {
-            id: 2,
-            title: "SERUM",
-            img: "https://www.sephora.com/productimages/sku/s2418846-main-zoom.jpg?imwidth=2000",
-            price: "45",
-            sale: "38",
-        },
-        {
-            id: 3,
-            title: "CLEANSER",
-            img: "https://www.sephora.com/productimages/sku/s2418796-main-zoom.jpg",
-            price: "45",
-            sale: "40",
-        },
-        {
-            id: 4,
-            title: "CREAM",
-            img: "https://media1.popsugar-assets.com/files/thumbor/jTCmafpfBOQcrj5KSZgNh_v9vz0/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2020/12/01/715/n/1922153/08ee366a5fc66b1075dce8.67674551_/i/jlo-beauty-products-first-look.jpg",
-            price: "55",
-            sale: "45",
-        },
-    ];
+   
+    const [data, setData] = useState([]);
+
+    
+    useEffect(() => {
+        axios.get("http://localhost:4500/api/item?category=cosmetics")
+            .then((response) => setData(response.data))
+    })
     return (
         <div>
         <h1 className="special-offers">Skin Care</h1>
         <div className="offers ">
             <Carousel showDots={false} responsive={responsive} className="products">
-                {arr.map((item) => (
+                {data.map((item) => (
                     <div className="card">
                         <Link to={"/productDetails"} className="card-link">
                             <img

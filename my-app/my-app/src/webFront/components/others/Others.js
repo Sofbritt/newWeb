@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import './Others.css'
 import Carousel from "react-multi-carousel";
  import "react-multi-carousel/lib/styles.css";
+ import { useEffect, useState } from "react";
+ import axios from "axios";
 
 const responsive = {
     superLargeDesktop: {
@@ -25,42 +27,20 @@ const responsive = {
 };
 
 function Others() {
-    let arr = [
-        {
-            id: 1,
-            title: "WHITE & PINK Y2K DRESS",
-            img: "https://shop.beyondretro.com/cdn/shop/products/beyond-retro-label-womens-white-halter-dress-1-E00922871_1512x.jpg?v=1679778582",
-            price: "60",
-            sale: "50",
-        },
-        {
-            id: 2,
-            title: "LIGHT BLUE Y2K TOP ",
-            img: "https://shop.beyondretro.com/cdn/shop/products/beyond-retro-label-womens-abstract-printed-top-1-E00840753_720x.jpg?v=1679951097",
-            price: "40",
-            sale: "35",
-        },
-        {
-            id: 3,
-            title: "Y2K  JEANS",
-            img: "https://shop.beyondretro.com/cdn/shop/products/beyond-retro-label-womens-zip-front-straight-fit-jeans-1-E00822278_720x.jpg?v=1674680515",
-            price: "55",
-            sale: "45",
-        },
-        {
-            id: 4,
-            title: "DENIM MAXI SKIRT",
-            img: "https://shop.beyondretro.com/cdn/shop/products/beyond-retro-label-womens-indigo-denim-skirt-1-E00867522_1512x.jpg?v=1685221570",
-            price: "35",
-            sale: "25",
-        },
-    ];
+    const [data, setData] = useState([]);
+
+  
+    useEffect(() => {
+        axios.get("http://localhost:4500/api/item?category=others")
+            .then((response) => setData(response.data))
+    })
+  
     return (
         <div>
         <h1 className="special-offers">Others</h1>
         <div className="offers ">
             <Carousel showDots={false} responsive={responsive} className="products">
-                {arr.map((item) => (
+                {data.map((item) => (
                     <div className="card">
                         <Link to={"/productDetails"} className="card-link">
                             <img
