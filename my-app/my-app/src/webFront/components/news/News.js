@@ -42,7 +42,7 @@ function News() {
                     arr.map((item) => (
 
 
-                        <div className='card'>
+                        <div className='card' key={item.id}>
 
 
                             <img src={item.img} className='news-img' alt="" />

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import * as Icon from "react-bootstrap-icons";
+import { BsSearch,BsBasket } from "react-icons/bs";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -25,7 +25,8 @@ function Header() {
           placeholder="Search"
         />
         <div>
-          <Icon.Search className="search-icon" />
+
+          <BsSearch className="search-icon" />
         </div>
       </div>
 
@@ -47,7 +48,8 @@ function Header() {
       <div>
 
         <button className="sign-in">Sign in</button>
-        <Icon.Basket className="basket-icon" />
+
+         <BsBasket className="basket-icon" /> 
         <select className="choose-language">
           <option value="Eng">Eng</option>
           <option value="Rus">Rus</option>

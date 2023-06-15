@@ -17,8 +17,9 @@ const getItems = async (req, res) => {
         const getItem1 = await Item.find({
             category: req.query.category
         })
+        // ,{_id: 0}) 
+
         res.status(200).json(getItem1)
-        console.log(getItem1)
     } catch (e) {
         res.status(400).json({ message: e.message })
     }

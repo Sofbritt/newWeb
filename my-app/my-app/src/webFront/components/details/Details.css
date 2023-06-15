@@ -49,9 +49,9 @@
 
 .details-img {
   width: 40%;
-  height: 340px;
+  height: 400px;
   cursor: crosshair;
-  object-fit: cover;
+  /* object-fit: cover; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.33);
   border-radius: 15px;
 }
