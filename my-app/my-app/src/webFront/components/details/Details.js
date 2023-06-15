@@ -1,19 +1,23 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import "./Details.css";
+import { BsArrowRight } from "react-icons/bs";
 import RelatedProducts from '../relatedProducts/RelatedProducts';
-import * as Icon from "react-bootstrap-icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 function Details() {
     const [count, setCount] = useState(0);
-    // const remove = (id) => {
+    const [data, setData] = useState({});
+    const params = useParams()
 
-    //     axios.delete('http://localhost:4500/movieDelete/' + id).then((res) => {
-    //         console.log(res)
-    //         navigate('/')
-    //     })
-    // };
+
+
+    useEffect(() => {
+        axios.get("http://localhost:4500/api/item/" + params.id)
+            .then((response) => setData(response.data))
+    }, [])
 
 
     return (
@@ -41,7 +45,7 @@ function Details() {
 
                 <img
                     alt=""
-                    src="https://www.famousfootwear.com/blob/product-images/20000/29/02/6/29026_single_feed800.jpg"
+                    src={data.img}
                     className="details-img"
                 />
 
@@ -52,20 +56,21 @@ function Details() {
                     <div className="titles-of-details">
                         <p>Category</p>
                         <p className="p-of-category">
-                            Others
-                            <Icon.ArrowRightShort className="short-arrow" />
+                            {data.category}
+                            <BsArrowRight className="short-arrow" />
                         </p>
                     </div>
                     <div className="titles-of-details">
                         <p>Country</p>
                         <p className="p-of-category">
-                            Others <Icon.ArrowRightShort className="short-arrow" />
+                            {data.country} <BsArrowRight className="short-arrow" />
                         </p>
                     </div>
                     <div className="titles-of-details">
                         <p> Manufacturer</p>
                         <p className="p-of-category">
-                            Manufacturer   <Icon.ArrowRightShort className="short-arrow" />
+                            {data.anufacturer}   <BsArrowRight className="short-arrow" />
+
                         </p>
                     </div>
 
@@ -78,13 +83,10 @@ function Details() {
                         </div>
                         <div className="price-main-div">
                             <div className="prices-div">
-                                <p className="prices-sale">33 500$</p>
-                                <p className="prices">31 490$</p>
+                                <p className="prices-sale"> {data.price} $</p>
+                                <p className="prices"> {data.sale} $</p>
                             </div>
-                            <div>
-                                <p className="last-price">last month's price</p>
-                                <p className="latest-price">33 444$</p>
-                            </div>
+
                         </div>
                     </div>
                 </div>
