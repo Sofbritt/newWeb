@@ -14,14 +14,19 @@ const itemCreate = async (req, res) => {
 
 const getItems = async (req, res) => {
     try {
-        const getItem1 = await Item.find({
-            category: req.query.category
-        })
-        // ,{_id: 0}) 
+        let limit = req.query.limit || 50;
+        const getItem1 = await Item.find({ category: req.query.category }).limit(
+            limit
+        );
 
-        res.status(200).json(getItem1)
+        console.log(getItem1);
+        res.status(200).json(getItem1);
+
+        //     category: req.query.category
+        // })
+        // ,{_id: 0}) 
     } catch (e) {
-        res.status(400).json({ message: e.message })
+        res.status(400).json({ message: e.message });
     }
 }
 
@@ -40,3 +45,5 @@ const getOneItem = async (req, res) => {
 module.exports = {
     itemCreate, getOneItem, getItems
 }
+
+

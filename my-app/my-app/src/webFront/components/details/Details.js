@@ -15,7 +15,12 @@ function Details() {
 
 
     useEffect(() => {
-        axios.get("http://localhost:4500/api/item/" + params.id)
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+        axios
+            .get("http://localhost:4500/api/item/" + params.id)
             .then((response) => setData(response.data))
     }, [])
 
@@ -51,7 +56,7 @@ function Details() {
 
 
                 <div className="details-info">
-                    <h2 className="name-of-product">Name of product</h2>
+                    <h2 className="name-of-product">{data.title} </h2>
                     <hr />
                     <div className="titles-of-details">
                         <p>Category</p>
@@ -69,7 +74,7 @@ function Details() {
                     <div className="titles-of-details">
                         <p> Manufacturer</p>
                         <p className="p-of-category">
-                            {data.anufacturer}   <BsArrowRight className="short-arrow" />
+                            {data.manufacturer}   <BsArrowRight className="short-arrow" />
 
                         </p>
                     </div>
@@ -92,7 +97,7 @@ function Details() {
                 </div>
             </div>
             <hr />
-            <RelatedProducts /> <br />
+            <RelatedProducts category={data.category} /> <br />
 
         </div>
     );

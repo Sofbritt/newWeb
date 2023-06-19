@@ -1,15 +1,16 @@
 import React from "react";
 import "./Header.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BsSearch,BsBasket } from "react-icons/bs";
+import { BsSearch, BsBasket } from "react-icons/bs";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Header() {
   const [show, setShow] = useState(false)
+  const [ basket,setBasket] = useState(false)
   return (
     <div className="header">
-      <Link to={'/'}>
+      <Link to={'/#'}>
         <img
           className="logo"
           alt="no"
@@ -47,9 +48,20 @@ function Header() {
       </h4>
       <div>
 
+      
+        <Link to={'/login'}>
         <button className="sign-in">Sign in</button>
+        </Link>
 
-         <BsBasket className="basket-icon" /> 
+        <BsBasket className="basket-icon" onClick={()=> setBasket(!basket)} />
+      
+
+        {basket === true &&(
+          <div className="basket-div">
+        basket
+
+            </div>
+        )}
         <select className="choose-language">
           <option value="Eng">Eng</option>
           <option value="Rus">Rus</option>
