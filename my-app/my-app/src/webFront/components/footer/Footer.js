@@ -19,7 +19,7 @@ function Footer() {
                     <div> <h5 className="titles-of-footer">Connection</h5> </div>
                     <div>  <h6 className="phone-number"> +374 11700500</h6><br /> SF.@store.am <br />  <button className="callBtn">Order a Calll</button></div>
                 </div>
-                <hr />
+               
 
 
             </div>

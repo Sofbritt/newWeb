@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
   const [show, setShow] = useState(false)
-  const [ basket,setBasket] = useState(false)
+
   return (
     <div className="header">
       <Link to={'/#'}>
@@ -40,28 +40,26 @@ function Header() {
             <h5 className="menu-links">Clotes</h5>
             <h5 className="menu-links">Cosmetics</h5>
             <h5 className="menu-links">SkinCare</h5>
-            <h5 className="menu-links">SkinCare</h5>
-            <h5 className="menu-links">SkinCare</h5>
-            <h5 className="menu-links">SkinCare</h5>
+            <h5 className="menu-links">Others</h5>
+            <h5 className="menu-links">Seasons Offers</h5>
+            <h5 className="menu-links">Special Offers</h5>
           </div>
         )}
       </h4>
       <div>
 
-      
+
         <Link to={'/login'}>
-        <button className="sign-in">Sign in</button>
+          <button className="sign-in">Sign in</button>
         </Link>
 
-        <BsBasket className="basket-icon" onClick={()=> setBasket(!basket)} />
-      
 
-        {basket === true &&(
-          <div className="basket-div">
-        basket
+        <Link to={'/basket'}>
+          <BsBasket className="basket-icon" />
+        </Link>
 
-            </div>
-        )}
+
+
         <select className="choose-language">
           <option value="Eng">Eng</option>
           <option value="Rus">Rus</option>

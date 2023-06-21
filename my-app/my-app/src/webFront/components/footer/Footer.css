@@ -1,5 +1,6 @@
 .footer {
-    box-shadow: 4px 3px 18px 1px rgba(0, 0, 0, 0.63);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .13);
+    margin-top: 35px;
 }
 
 .footrs-menu {
