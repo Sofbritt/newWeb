@@ -32,7 +32,7 @@ function UncontrolledExample() {
                 ))}
             </Carousel>
             <div className="card card-carousel">
-                <Link to={"/productDetails"} className="card-link">
+                <Link to={"/product/:id"} className="card-link">
                     <img
                         alt=""
                         src="https://png.pngtree.com/png-vector/20221003/ourmid/pngtree-15-discount-tag-png-image_6262158.png"

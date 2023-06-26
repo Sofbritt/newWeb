@@ -3,6 +3,7 @@ import "./Cosmetics.css";
 import Slide from '../slide/Slide';
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 
@@ -16,13 +17,15 @@ function Cosmetics() {
     },[])
 
     return (
-        <div>
+        <div> 
             <h1 className="special-offers">Cosmetics</h1>
             <div className="offers ">
             <Slide arr={data} />
             </div>
             <div className="see-more">
-                <button className="see-more-but">See more</button>
+            <Link to={'/showmore'}>
+                <button className="see-more-but" >See more</button>
+                </Link>
             </div>
         </div>
     )

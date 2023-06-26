@@ -4,6 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Slide from '../slide/Slide';
+import { Link } from 'react-router-dom';
 
 
 
@@ -23,7 +24,9 @@ function SeasonsOffers() {
         
         </div>
         <div className="see-more">
-            <button className="see-more-but">See more</button>
+        <Link to={'/showmore'}>
+                <button className="see-more-but" >See more</button>
+                </Link>
         </div>
     </div>
     )

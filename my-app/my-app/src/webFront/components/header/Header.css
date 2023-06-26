@@ -54,7 +54,7 @@
     height: 25px;
 }
 
-.menu{
+.menu {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -74,6 +74,11 @@
 .menu-links {
     font-weight: bold;
     padding: 0px 10px;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: black;
 }
 
 .menu-links:hover {
@@ -110,7 +115,7 @@
     border-radius: 10px;
 }
 
-.basket-div{
+.basket-div {
     width: 440px;
     height: 400px;
     padding: 10px 0px;
@@ -120,5 +125,5 @@
     z-index: 9;
     box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.653);
     overflow-y: auto;
- 
+
 }

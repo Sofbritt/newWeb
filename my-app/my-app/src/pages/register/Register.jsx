@@ -2,6 +2,7 @@ import React from "react";
 import "./Register.css"
 import { useState } from "react"
 import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 
 const url = "http://localhost:4500/api/auth/register"
 
@@ -11,24 +12,25 @@ export default function Register(props) {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const navigate=useNavigate()
 
-    const handlesubmit = async (e) => {
+ 
+    const handlesubmit = (e) => {
         e.preventDefault();
-        try {
-            const response = await axios.post(url, { name, email, password })
-            console.log(response.data)
-
-        } catch (e) {
-            console.log('error')
-        }
-    }
+    
+        axios.post(url, { name, email, password }).then((res) => {
+          if (res.status === 200) {
+            navigate("/login");
+          }
+        });
+      };
 
 
 
     return (
         <div className="Auth-form-container">
 
-            <form className="Auth-form" >
+            <form className="Auth-form" onSubmit={handlesubmit} >
                 <div className="Auth-form-content">
                     <h3 className="Auth-form-title">Sign Up</h3>
                     <div className="form-group mt-3">
@@ -61,7 +63,7 @@ export default function Register(props) {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                         <div className="d-grid gap-2 mt-3">
-                            <button type="submit" className="btn btn-primary" onSubmit={() => handlesubmit()}>
+                            <button type="submit" className="btn btn-primary" >
                                 Submit
                             </button>
                         </div>

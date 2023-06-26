@@ -37,12 +37,25 @@ function Header() {
         Menu
         {show === true && (
           <div className="menues">
-            <h5 className="menu-links">Clotes</h5>
-            <h5 className="menu-links">Cosmetics</h5>
-            <h5 className="menu-links">SkinCare</h5>
-            <h5 className="menu-links">Others</h5>
-            <h5 className="menu-links">Seasons Offers</h5>
-            <h5 className="menu-links">Special Offers</h5>
+            <Link className="menu-link" to={'clothes'}>
+              <h5 className="menu-links">Clotes</h5>
+            </Link>
+            <Link className="menu-link" to={'cosmetics'}>
+              <h5 className="menu-links">Cosmetics</h5>
+            </Link>
+            <Link className="menu-link" to={'skincare'}>
+              <h5 className="menu-links">SkinCare</h5>
+            </Link>
+            <Link className="menu-link" to={'others'}>
+              <h5 className="menu-links">Others</h5>
+            </Link>
+            <Link className="menu-link" to={'seasonsoffers'}>
+              <h5 className="menu-links">Seasons Offers</h5>
+            </Link>
+            <Link className="menu-link" to={'specialoffers'}>
+              <h5 className="menu-links">Special Offers</h5>
+            </Link>
+
           </div>
         )}
       </h4>

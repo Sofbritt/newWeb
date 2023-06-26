@@ -23,7 +23,8 @@ const itemSchema = new mongoose.Schema({
     country: String,
     manufacturer: String,
     price: Number,
-    sale: Number
+    sale: Number,
+    time:String
 })
 
 

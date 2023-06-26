@@ -84,3 +84,7 @@
 color: rgb(255, 90, 214);
 font-size: 60px;
 }
+
+.price-sale{
+    color: green;
+}

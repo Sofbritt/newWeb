@@ -3,10 +3,12 @@
   justify-content: center;
   padding: 20px;
 }
+
 .react-multi-carousel-item {
   display: flex;
   justify-content: center;
 }
+
 .card {
   max-width: 300px;
   min-width: 300px;
@@ -20,6 +22,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 .card-link {
   text-decoration: none;
 }
@@ -31,10 +34,12 @@
   left: 0;
   top: 0;
 }
+
 .offersImg {
   width: 100%;
   height: 250px;
 }
+
 .offersTitle {
   height: 65px;
   text-align: center;
@@ -42,6 +47,7 @@
   color: black;
   text-decoration: none;
 }
+
 .price {
   text-align: center;
   margin-bottom: 10px;
@@ -52,6 +58,7 @@
   font-weight: 700;
   font-size: 16px;
 }
+
 .price-sale {
   text-align: center;
   margin-bottom: 10px;
@@ -70,27 +77,29 @@
   display: flex;
   justify-content: center;
 }
+
 .card-link {
   width: 90%;
 }
 
 .see-more-but {
-  color: #49b748;
+  color:palevioletred;
   cursor: pointer;
-  border: 2px solid #49b748;
+  border: 2px solid palevioletred;
   padding: 5px 30px;
   font-size: 18px;
   background: transparent;
   border-radius: 20px;
 }
+
 .special-offers {
-  color: #49b748;
+  color: palevioletred;
   width: 100%;
   height: auto;
   position: relative;
   font-size: 43px;
   text-align: center;
   margin: 0 0 60px;
-  margin-top: 30px;
+  margin-top: 50px;
   font-weight: 700;
 }

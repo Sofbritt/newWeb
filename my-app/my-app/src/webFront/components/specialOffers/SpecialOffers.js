@@ -3,6 +3,7 @@ import "./SpecialOffers.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Slide from '../slide/Slide';
+import { Link } from "react-router-dom";
 
 
 function SpecialOffers() {
@@ -22,7 +23,11 @@ function SpecialOffers() {
               <Slide arr={data} />
             </div>
             <div className="see-more">
-                <button className="see-more-but">See more</button>
+                
+                <Link to={'/showmore'}>
+                <button className="see-more-but" >See more</button>
+                </Link>
+                
             </div>
         </div>
     )

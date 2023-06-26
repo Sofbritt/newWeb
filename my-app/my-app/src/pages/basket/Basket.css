@@ -44,11 +44,13 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
 }
 
 .bonus {
     color: palevioletred;
 }
+
 
 
 .add-btn {
@@ -78,6 +80,7 @@
 
 }
 
+
 .sale-price {
     font-size: 20px;
     color: black;
@@ -98,7 +101,6 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-
 }
 
 
@@ -111,6 +113,7 @@
     background-color: rgb(245, 245, 245);
     border-radius: 15px;
     margin-right: 15px;
+    gap: 10px;
 }
 
 .total-price {
