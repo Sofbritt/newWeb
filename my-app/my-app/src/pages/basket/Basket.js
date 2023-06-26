@@ -6,8 +6,12 @@ import { useState } from "react";
 
 
 
+
 function Basket() {
     const [count, setCount] = useState(0)
+    const [remove, setRemove] = useState()
+   
+    
     return (
         <div>
 
@@ -34,21 +38,27 @@ function Basket() {
                         <h5 className="price"> 1645</h5>
                         <h5 className="sale-price"> 1500</h5>
                     </div>
-                    <div className="x-icon">
+                    <div className="x-icon" onClick={() => setRemove(!remove)}>
                         <BsXCircle />
+                        {/* {close === true ? (
+                         alert('Do you want to remove it?')
+                        ) :
+                         ''
+                        }  */}
+
                     </div>
 
-                </div>
+                </div> 
                 <div className="total-div">
                     <div className="total1-div">
                         <h4 className="title-total">Total</h4>
                         <h5 className="total-price"> 4990$</h5>
                     </div>
                     <div className="bonus-points">
-                        <h5 className="bonus">Accumulated bonus</h5>
+                        <h5 className="bonus">Accumulated bonus</h5> 
                         <h5 className="points">0 Points</h5>
                     </div>
-                    <button className="next-btn">NEXT</button>
+                    <button className="next-btn">NEXT</button> 
 
                 </div>
 
