@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Header.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import { BsSearch, BsBasket } from "react-icons/bs";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { userInfo } from "../../../App";
 function Header() {
-  const [show, setShow] = useState(false)
+  const { user, setUser } = useContext(userInfo);
+  const [show, setShow] = useState(false);
+
 
   return (
     <div className="header">
-      <Link to={'/#'}>
+      <Link to={"/#"}>
         <img
           className="logo"
           alt="no"
@@ -26,52 +28,63 @@ function Header() {
           placeholder="Search"
         />
         <div>
-
           <BsSearch className="search-icon" />
         </div>
       </div>
-
-
 
       <h4 className="menu" onClick={() => setShow(!show)}>
         Menu
         {show === true && (
           <div className="menues">
-            <Link className="menu-link" to={'clothes'}>
+            <Link className="menu-link" to={"showmore/clothes"}>
               <h5 className="menu-links">Clotes</h5>
             </Link>
-            <Link className="menu-link" to={'cosmetics'}>
+            <Link className="menu-link" to={"showmore/skincare"}>
               <h5 className="menu-links">Cosmetics</h5>
             </Link>
-            <Link className="menu-link" to={'skincare'}>
+            <Link className="menu-link" to={"showmore/cosmetics"}>
               <h5 className="menu-links">SkinCare</h5>
             </Link>
-            <Link className="menu-link" to={'others'}>
+            <Link className="menu-link" to={"showmore/others"}>
               <h5 className="menu-links">Others</h5>
             </Link>
-            <Link className="menu-link" to={'seasonsoffers'}>
+            <Link className="menu-link" to={"showmore/seasons"}>
               <h5 className="menu-links">Seasons Offers</h5>
             </Link>
-            <Link className="menu-link" to={'specialoffers'}>
+            <Link className="menu-link" to={"showmore/special"}>
               <h5 className="menu-links">Special Offers</h5>
             </Link>
-
           </div>
         )}
       </h4>
       <div>
+        {!user.name ? (
+          <>
+            <Link to={"/login"}>
+              <button className="sign-in">Sign in</button>
+            </Link>
+            <Link to={"/register"}>
+              <button className="sign-in">Sign Up</button>
+            </Link>
+          </>
+        ) : (
+          <>
+            <span>{user.name}</span>
+            <button className="logout-btn"
+              onClick={() => {
+                localStorage.clear();
+                setUser("");
+              }}
+            >
+              Log out
+            </button>
+          </>
+        )}
+        
 
-
-        <Link to={'/login'}>
-          <button className="sign-in">Sign in</button>
-        </Link>
-
-
-        <Link to={'/basket'}>
+        <Link to={"/basket"}>
           <BsBasket className="basket-icon" />
         </Link>
-
-
 
         <select className="choose-language">
           <option value="Eng">Eng</option>
@@ -80,7 +93,7 @@ function Header() {
         </select>
       </div>
     </div>
-  )
+  );
 }
 
 export default Header;

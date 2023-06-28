@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Login.css";
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-
+import { Navigate, useNavigate } from "react-router-dom";
+import { userInfo } from "../../App";
 const url = "http://localhost:4500/api/auth/login";
 
 export default function Login(props) {
@@ -11,17 +11,29 @@ export default function Login(props) {
   const [error, setError] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const { user, setUser } = useContext(userInfo);
+
+  if (user) {
+    return <Navigate to="/" />;
+  }
+
+
+
 
   const handlesubmit = (e) => {
     e.preventDefault();
-    axios.post(url, { email, password }).then((res) => {
-      if (res.status === 200) {
-        console.log(res.data);
-        navigate("/");
-      }
-    }).catch((err) => {
-      setError(err.response.data.message)
-    })
+    axios
+      .post(url, { email, password })
+      .then((res) => {
+        if (res.status === 200) {
+          localStorage.setItem("user", JSON.stringify(res.data));
+          setUser(res.data);
+          navigate("/");
+        }
+      })
+      .catch((err) => {
+        setError(err.response.data.message);
+      });
   };
   return (
     <div className="Auth-form-container">
@@ -49,7 +61,7 @@ export default function Login(props) {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <p>{error}</p>
+          <p className="error">{error}</p>
           <div className="d-grid gap-2 mt-3">
             <button type="submit" className="btn btn-primary">
               Submit

@@ -23,8 +23,11 @@ const itemSchema = new mongoose.Schema({
     country: String,
     manufacturer: String,
     price: Number,
-    sale: Number,
-    time:String
+    sale: Number
+    // time:{
+    //     type: Date,
+    //     default: Date.now
+    // }
 })
 
 

@@ -22,7 +22,7 @@ function Details() {
         axios
             .get("http://localhost:4500/api/item/" + params.id)
             .then((response) => setData(response.data))
-    }, [])
+    }, [params.id])
 
 
     return (

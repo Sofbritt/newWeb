@@ -42,7 +42,7 @@ const login = async (req, res) => {
                 httpOnly: true,
             })
             .status(200)
-            .json(token);
+            .json({ token, name: user.name, id: user._id });
     } catch (e) {
         console.log(e);
         res.status(400).json({ message: e.message });

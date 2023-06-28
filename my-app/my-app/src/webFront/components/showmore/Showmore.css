@@ -12,7 +12,6 @@
 .show-more-div {
     background-color: white;
     width: 97%;
-    height: 550px;
     border: none;
     border-radius: 20px;
     display: flex;
@@ -35,6 +34,7 @@
 
 .title-category {
     font-weight: 600;
+    color: #b1255f;
 }
 
 .title-filtr {
@@ -42,7 +42,7 @@
 }
 
 .link-in-show {
-    color: black;
+    color: rgb(196, 0, 98);
     text-decoration: none;
 }
 
@@ -114,14 +114,10 @@ input:checked+.slider:before {
 }
 
 .showmore-products {
-    max-width: 300px;
-    min-width: 300px;
-    height: 420px;
+  
     padding: 10px;
-    align-items: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
-    background: #fff;
-    border-radius: 10px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap:wrap;
 }

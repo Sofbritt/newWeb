@@ -8,7 +8,7 @@ function Slide({ arr }) {
     return (
         <Carousel showDots={false} responsive={responsive} className="products">
             {arr.map((item) => (
-                <div className="card" key={item.id}>
+                <div className="card" key={item._id}>
                     <Link to={"/product/" + item._id} className="card-link">
                         <img
                             alt=""

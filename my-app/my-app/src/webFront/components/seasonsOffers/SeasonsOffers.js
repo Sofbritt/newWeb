@@ -24,7 +24,7 @@ function SeasonsOffers() {
         
         </div>
         <div className="see-more">
-        <Link to={'/showmore'}>
+        <Link to={'/showmore/seasons'}>
                 <button className="see-more-but" >See more</button>
                 </Link>
         </div>

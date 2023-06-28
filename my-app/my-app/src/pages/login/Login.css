@@ -45,3 +45,7 @@
     background-color: palevioletred;
     border: none;
   }
+
+  .error{
+    color: red;
+  }

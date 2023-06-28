@@ -59,14 +59,14 @@
 .titleOfAdd {
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: flex-end;
     color: rgb(194, 41, 125);
 }
 
 .price-of-add {
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: flex-end;
     color: rgb(194, 41, 125);
 }
 

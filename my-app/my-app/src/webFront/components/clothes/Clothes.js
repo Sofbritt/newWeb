@@ -22,7 +22,7 @@ function Clothes() {
                 <Slide arr={data} />
             </div>
             <div className="see-more">
-            <Link to={'/showmore'}>
+            <Link to={'/showmore/clothes'}>
                 <button className="see-more-but" >See more</button>
                 </Link>
             </div>
