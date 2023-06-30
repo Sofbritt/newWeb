@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    basket: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Clothes' }],
+    basket: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Item' }],
     card: Number
 })
 
@@ -23,11 +23,11 @@ const itemSchema = new mongoose.Schema({
     country: String,
     manufacturer: String,
     price: Number,
-    sale: Number
-    // time:{
-    //     type: Date,
-    //     default: Date.now
-    // }
+    sale: Number,
+    time:{
+        type: Date,
+        default: Date.now
+    }
 })
 
 

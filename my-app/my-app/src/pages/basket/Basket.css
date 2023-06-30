@@ -1,6 +1,6 @@
 .clean-basket-div {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin-bottom: 170px;
 
@@ -19,9 +19,10 @@
     margin-top: 100px;
     margin-left: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.33);
-    width: 65%;
-    height: 160px;
+    width: 27%;
+    height: 180px;
     border-radius: 20px 15px 15px 20px;
+    background-color: rgb(255, 228, 233);
 
 }
 
@@ -90,9 +91,15 @@
 }
 
 .x-icon {
-    color: rgb(224, 56, 112);
+    color: rgb(85, 0, 28);
     font-size: 25px;
     margin-bottom: 100px;
+
+}
+
+.x-icon:hover{
+   color: rgb(211, 34, 116);
+
 
 }
 
@@ -112,7 +119,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.33);
     background-color: rgb(245, 245, 245);
     border-radius: 15px;
-    margin-right: 15px;
+    margin-left: 35%;
     gap: 10px;
 }
 

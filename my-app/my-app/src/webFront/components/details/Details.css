@@ -2,6 +2,18 @@
   font-size: 20px;
 }
 
+.alert {
+  position: absolute;
+  right: 0;
+  background-color: pink;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.33);
+  padding: 20px;
+  text-align: center;
+  width: 170px;
+}
+
 .link {
   display: flex;
   padding-left: 30px;
@@ -63,6 +75,11 @@
   height: 40px;
   border-radius: 15px;
   border: none;
+}
+
+.add-in-basket:hover{
+  border: black 2px solid;
+  background-color:rgb(255, 161, 200);
 }
 
 .price {

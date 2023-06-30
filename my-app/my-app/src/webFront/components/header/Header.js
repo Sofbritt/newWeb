@@ -5,10 +5,20 @@ import { BsSearch, BsBasket } from "react-icons/bs";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { userInfo } from "../../../App";
+import axios from "axios";
+
+
 function Header() {
   const { user, setUser } = useContext(userInfo);
   const [show, setShow] = useState(false);
+  const [search, setSearch] = useState('')
 
+
+  function sendSearch() {
+    axios.get("http://localhost:3000/getItem?q=" + search).then((res) => {
+
+    })
+  }
 
   return (
     <div className="header">
@@ -20,12 +30,14 @@ function Header() {
         />
       </Link>
 
-      <div className="search">
+      <div className="search" onClick={sendSearch}>
         <input
           type="text"
           name="search"
           className="search-inp"
           placeholder="Search"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
         />
         <div>
           <BsSearch className="search-icon" />
@@ -36,22 +48,22 @@ function Header() {
         Menu
         {show === true && (
           <div className="menues">
-            <Link className="menu-link" to={"showmore/clothes"}>
+            <Link className="menu-link" to={"/showmore/clothes"}>
               <h5 className="menu-links">Clotes</h5>
             </Link>
-            <Link className="menu-link" to={"showmore/skincare"}>
+            <Link className="menu-link" to={"/showmore/skincare"}>
               <h5 className="menu-links">Cosmetics</h5>
             </Link>
-            <Link className="menu-link" to={"showmore/cosmetics"}>
+            <Link className="menu-link" to={"/showmore/cosmetics"}>
               <h5 className="menu-links">SkinCare</h5>
             </Link>
-            <Link className="menu-link" to={"showmore/others"}>
+            <Link className="menu-link" to={"/showmore/others"}>
               <h5 className="menu-links">Others</h5>
             </Link>
-            <Link className="menu-link" to={"showmore/seasons"}>
+            <Link className="menu-link" to={"/showmore/seasons"}>
               <h5 className="menu-links">Seasons Offers</h5>
             </Link>
-            <Link className="menu-link" to={"showmore/special"}>
+            <Link className="menu-link" to={"/showmore/special"}>
               <h5 className="menu-links">Special Offers</h5>
             </Link>
           </div>
@@ -64,23 +76,23 @@ function Header() {
               <button className="sign-in">Sign in</button>
             </Link>
             <Link to={"/register"}>
-              <button className="sign-in">Sign Up</button>
+              <button className="sign-in">Sign up</button>
             </Link>
           </>
         ) : (
           <>
             <span>{user.name}</span>
-            <button className="logout-btn"
+            <button
               onClick={() => {
+                alert('Are you sure you want to Log out?')
                 localStorage.clear();
                 setUser("");
-              }}
-            >
+              }} 
+            className="logout" >
               Log out
             </button>
           </>
         )}
-        
 
         <Link to={"/basket"}>
           <BsBasket className="basket-icon" />

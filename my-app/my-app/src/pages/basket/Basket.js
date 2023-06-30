@@ -1,17 +1,30 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "./Basket.css";
 import Others from "../../webFront/components/others/Others";
 import { BsXCircle } from "react-icons/bs";
 import { useState } from "react";
 import { userInfo } from "../../App";
 import { Navigate } from "react-router-dom";
+import axios from "axios";
 
 function Basket() {
-  const [count, setCount] = useState(0);
-  const [remove, setRemove] = useState();
+  const [data, setData] = useState([]);
+
   const { user } = useContext(userInfo);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:4500/api/item/basket/" + user.id)
+      .then((res) => setData(res.data));
+  }, []);
   if (!user) {
     return <Navigate to="/" />;
+  }
+
+  function removeItem(id) {
+    axios
+      .delete(`http://localhost:4500/api/item/removeitem/${user.id}/${id}`)
+      .then((res) => setData(res.data));
   }
 
   return (
@@ -20,50 +33,35 @@ function Basket() {
       <h3 className="basket-title">Basket</h3>{" "}
       <h5 className="clean-basket-title">Clean Basket</h5>
       <div className="clean-basket-div">
-        <div className="basket">
-          <img
-            className="basket-img"
-            src="https://static.thcdn.com/images/large/original//productimg/1600/1600/11434754-8895036866079892.jpg"
-          />
-          <div className="basket-product-info">
-            <h5>basket product info</h5>
+        {data.map((item) => (
+          <div className="basket">
+            <img className="basket-img" alt="" src={item.img} />
+            <div className="basket-product-info">
+              <h5>basket product info</h5>
+            </div>
+
+            <div className="prices">
+              <h5 className="price"> {item.price}$</h5>
+              <h5 className="sale-price"> {item.sale}$ </h5>
+            </div>
+            <div className="x-icon" onClick={() => removeItem(item._id)}>
+              <BsXCircle />
+
+            </div>
           </div>
-          <div className="basket-counter">
-            <button className="add-btn" onClick={() => setCount(count + 1)}>
-              +
-            </button>
-            <span>{count} </span>
-            <button className="minus-btn" onClick={() => setCount(count - 1)}>
-              -
-            </button>
-          </div>
-          <div className="bonus">
-            <h5> 0 Bonus</h5>
-          </div>
-          <div className="prices">
-            <h5 className="price"> 1645</h5>
-            <h5 className="sale-price"> 1500</h5>
-          </div>
-          <div className="x-icon" onClick={() => setRemove(!remove)}>
-            <BsXCircle />
-            {/* {close === true ? (
-                         alert('Do you want to remove it?')
-                        ) :
-                         ''
-                        }  */}
-          </div>
+        ))}
+
+      </div>
+      <div className="total-div">
+        <div className="total1-div">
+          <h4 className="title-total">Total</h4>
+          <h5 className="total-price">
+
+            {data.reduce((acc, item) => acc + item.price, 0)}$
+          </h5>
         </div>
-        <div className="total-div">
-          <div className="total1-div">
-            <h4 className="title-total">Total</h4>
-            <h5 className="total-price"> 4990$</h5>
-          </div>
-          <div className="bonus-points">
-            <h5 className="bonus">Accumulated bonus</h5>
-            <h5 className="points">0 Points</h5>
-          </div>
-          <button className="next-btn">NEXT</button>
-        </div>
+
+        <button className="next-btn">NEXT</button>
       </div>
     </div>
   );

@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import { responsive } from "../data";
 
+
+
 function Slide({ arr }) {
+
+ 
     return (
         <Carousel showDots={false} responsive={responsive} className="products">
             {arr.map((item) => (
@@ -19,7 +23,7 @@ function Slide({ arr }) {
                         <h2 className="offersTitle">{item.title}</h2>
                         <h3 className="price">{item.price} $</h3>
                         <h3 className="price-sale">{item.sale} $</h3>
-                        <button className="add">Add in Basket</button>
+                        <button className="add"  >See More</button>
                     </Link>
                 </div>
             ))}

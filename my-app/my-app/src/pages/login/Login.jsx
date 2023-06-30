@@ -12,7 +12,6 @@ export default function Login(props) {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const { user, setUser } = useContext(userInfo);
-
   if (user) {
     return <Navigate to="/" />;
   }

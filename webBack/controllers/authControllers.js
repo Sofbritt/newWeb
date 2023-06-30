@@ -2,6 +2,7 @@ const { User } = require("../models/model");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
+
 const register = async (req, res) => {
     try {
         const salt = await bcrypt.genSalt(10);
@@ -49,7 +50,10 @@ const login = async (req, res) => {
     }
 };
 
+
+
+
 module.exports = {
     register,
-    login,
+    login
 };

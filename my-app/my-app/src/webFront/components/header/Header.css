@@ -127,3 +127,10 @@
     overflow-y: auto;
 
 }
+
+.logout{
+    border: none;
+    background-color: rgb(255, 139, 197);
+    border-radius: 10px;
+    color: white;
+}

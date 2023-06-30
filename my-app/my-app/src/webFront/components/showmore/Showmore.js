@@ -22,9 +22,7 @@ function ShowMore() {
   return (
     <div className="show-more">
       <div className="link">
-        <Link className="link-titles" style={{ order: "-1" }} to={"/clothes"}>
-          Clothes
-        </Link>
+
         <Link className="link-titles" style={{ order: "-2" }} to={"/"}>
           Main Page
         </Link>
@@ -37,21 +35,21 @@ function ShowMore() {
       <div className="show-more-div">
         <div className="categories">
           <div className="filtr">
-            <h3 className="title-category"> Category</h3> <br/>
-            <Link to={"/showmore/cosmetics"} className="link-in-show">
-              <h5>Skin Care</h5>
+            <h3 className="title-category"> Cateogries</h3>
+            <Link to={"/showmore/clothes"} className="link-in-show">
+              <h5>Clothes</h5>
             </Link>
             <Link to={"/showmore/skincare"} className="link-in-show">
               <h5>Cosmetics</h5>
             </Link>
-            <Link to={"/showmore/seasons"} className="link-in-show">
-              <h5>Seasons Offers</h5>
+            <Link to={"/showmore/cosmetics"} className="link-in-show">
+              <h5>Skin Care</h5>
             </Link>
             <Link to={"/showmore/special"} className="link-in-show">
               <h5>Special Offers</h5>
             </Link>
-            <Link to={"/showmore/others"} className="link-in-show">
-              <h5>Others</h5>
+            <Link to={"/showmore/seasons"} className="link-in-show">
+              <h5>Seasons Offers</h5>
             </Link>
           </div>
         </div>

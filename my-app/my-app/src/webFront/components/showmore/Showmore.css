@@ -34,7 +34,7 @@
 
 .title-category {
     font-weight: 600;
-    color: #b1255f;
+    color: rgb(204, 21, 134);
 }
 
 .title-filtr {
@@ -42,9 +42,11 @@
 }
 
 .link-in-show {
-    color: rgb(196, 0, 98);
+    color: rgb(223, 74, 156);
     text-decoration: none;
+
 }
+
 
 .filtr {
     background-color: white;

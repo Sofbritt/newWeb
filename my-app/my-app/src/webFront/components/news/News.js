@@ -4,11 +4,8 @@ import * as Icon from "react-bootstrap-icons";
 import "./News.css";
 
 
-
-
-
 function News() {
-
+ 
     let arr = [
         {
             id: 1,
@@ -46,14 +43,13 @@ function News() {
 
                         <div key={item._id} className="card">
 
-                            <img src={item.img} className='news-img' alt="" />
-                            <p>{item.time} </p>
-                            <h2 className='news-title'>{item.title}</h2>
-
+                                <img src={item.img} className='news-img' alt="" />
+                                <p>{item.time} </p>
+                                <h2 className='news-title'>{item.title}</h2>
+                        
 
 
                             <button className='show-moreBtn'>Show More<Icon.ArrowRight className='arrowRight-icon' /></button>
-                           
 
 
                         </div>

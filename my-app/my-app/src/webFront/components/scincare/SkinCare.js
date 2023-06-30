@@ -22,7 +22,7 @@ function SkinCare() {
                 <Slide arr={data} />
             </div>
             <div className="see-more">
-            <Link to={'/showmore/skincare'}>
+            <Link to={'/showmore/cosmetics'}>
                 <button className="see-more-but" >See more</button>
                 </Link>
             </div>
