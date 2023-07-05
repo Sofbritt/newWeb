@@ -102,4 +102,15 @@
   margin: 0 0 60px;
   margin-top: 50px;
   font-weight: 700;
+
 }
+
+/* @media (max-width: 800px){
+  .offers{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    background-color: #f26d26;
+    
+  }
+} */

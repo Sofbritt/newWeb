@@ -3,7 +3,7 @@ const router = express.Router()
 const controller = require('../controllers/feedbackControllers.js')
 
 
-router.post('/sendfeedback',controller.sendFeedBack)
+router.post('/',controller.sendFeedBack)
 
 
 module.exports = router;

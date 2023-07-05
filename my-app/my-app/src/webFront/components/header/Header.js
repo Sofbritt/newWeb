@@ -3,7 +3,7 @@ import "./Header.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BsSearch, BsBasket } from "react-icons/bs";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { userInfo } from "../../../App";
 import axios from "axios";
 
@@ -12,11 +12,13 @@ function Header() {
   const { user, setUser } = useContext(userInfo);
   const [show, setShow] = useState(false);
   const [search, setSearch] = useState('')
+  const navigate = useNavigate()
 
 
   function sendSearch() {
-    axios.get("http://localhost:3000/getItem?q=" + search).then((res) => {
-
+    axios.get("http://localhost:4500/api/item/getitem?q=" + search).then((res) => {
+      navigate('/product/' + res.data)
+      setSearch('')
     })
   }
 
@@ -30,7 +32,7 @@ function Header() {
         />
       </Link>
 
-      <div className="search" onClick={sendSearch}>
+      <div className="search" >
         <input
           type="text"
           name="search"
@@ -39,7 +41,7 @@ function Header() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <div>
+        <div onClick={sendSearch}>
           <BsSearch className="search-icon" />
         </div>
       </div>
@@ -69,7 +71,7 @@ function Header() {
           </div>
         )}
       </h4>
-      <div>
+      <div className="main-of-basket">
         {!user.name ? (
           <>
             <Link to={"/login"}>
@@ -87,8 +89,8 @@ function Header() {
                 alert('Are you sure you want to Log out?')
                 localStorage.clear();
                 setUser("");
-              }} 
-            className="logout" >
+              }}
+              className="logout" >
               Log out
             </button>
           </>
@@ -98,11 +100,7 @@ function Header() {
           <BsBasket className="basket-icon" />
         </Link>
 
-        <select className="choose-language">
-          <option value="Eng">Eng</option>
-          <option value="Rus">Rus</option>
-          <option value="Arm">Arm</option>
-        </select>
+
       </div>
     </div>
   );

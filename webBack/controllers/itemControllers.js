@@ -69,12 +69,13 @@ const removeItem = async (req, res) => {
 const search = async (req, res) => {
   try {
     const item = await Item.findOne({title : req.query.q });
-    res.status(200).json(item)
+    res.status(200).json(item.id)
   } catch (e) {
     res.status(400).json({ message: e.message });
 
   }
 };
+
 module.exports = {
   itemCreate,
   getOneItem,

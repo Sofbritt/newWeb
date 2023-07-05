@@ -4,25 +4,36 @@ import Carousel from 'react-bootstrap/Carousel';
 import "./Carousel.css";
 import { Link } from 'react-router-dom';
 import * as Icon from "react-bootstrap-icons";
+import { useState, useEffect } from "react"
+import axios from "axios";
 
-let arr = [
-    "https://i.etsystatic.com/17042832/r/il/4b6157/4452681708/il_fullxfull.4452681708_jcc2.jpg",
-    "https://hips.hearstapps.com/hmg-prod/images/hbz-clear-lip-gloss-index-1594043471.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*",
-    "https://fashionista.com/.image/t_share/MTI3OTEyMDExNjM0ODQ2MzM5/titlejpg.jpg",
-];
+// let arr = [
+//     "https://i.etsystatic.com/17042832/r/il/4b6157/4452681708/il_fullxfull.4452681708_jcc2.jpg",
+//     "https://hips.hearstapps.com/hmg-prod/images/hbz-clear-lip-gloss-index-1594043471.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*",
+//     "https://fashionista.com/.image/t_share/MTI3OTEyMDExNjM0ODQ2MzM5/titlejpg.jpg",
+// ];
 
 
 function UncontrolledExample() {
+    const [data, setData] = useState([]);
+
+
+    useEffect(() => {
+        axios.get("http://localhost:4500/api/item?category=carousel")
+            .then((response) => setData(response.data))
+    }, [])
+
+
     let nextIcon = <Icon.ArrowRightCircleFill className="next-prev" />
     let prevIcon = <Icon.ArrowLeftCircleFill className="next-prev" />
     return (
         <div className="mainDiv-add">
             <Carousel className="carousel" prevIcon={prevIcon} nextIcon={nextIcon}>
-                {arr.map((item, index) => (
+                {data.map((item, index) => (
                     <Carousel.Item key={index}>
                         <img
                             className="d-block w-100 carouselImgs"
-                            src={item}
+                            src={item.img}
                             alt="First slide"
                         />
                         <Carousel.Caption>
@@ -32,7 +43,7 @@ function UncontrolledExample() {
                 ))}
             </Carousel>
             <div className="card card-carousel">
-                <Link to={"/product/:id"} className="card-link">
+                <Link className="card-link">
                     <img
                         alt=""
                         src="https://png.pngtree.com/png-vector/20221003/ourmid/pngtree-15-discount-tag-png-image_6262158.png"

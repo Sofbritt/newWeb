@@ -15,7 +15,7 @@ app.use(cors({
 const authRouter = require('./routes/authRouter.js')
 const itemRouter = require('./routes/itemRouter.js')
 
-const feedbackRouter=require('./routes/feedbackRouter.js')
+const feedbackRouter = require('./routes/feedbackRouter.js')
 
 
 app.use('/api/auth', authRouter);

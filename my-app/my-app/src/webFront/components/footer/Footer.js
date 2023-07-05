@@ -9,7 +9,6 @@ function Footer() {
         <div>
             <div className="footer">
 
-
                 <div className="footrs-menu">
                     <img className='logo' src='https://i.fbcd.co/products/resized/resized-750-500/sf-fs-modern-logo-designs-2-f6a94cb89c415dc12a346af7ca2e5d2e5077f0687cdc5184030fd397aa46b777.jpg' /> <p><br />  Store <br /> <img src="https://www.shutterstock.com/image-photo/kiev-ukraine-april-07-2019-260nw-1369979807.jpg" className="footer-logos" /></p>
                     <div>  <h5 className="titles-of-footer">About Company</h5> About Us <Link className="footerLinks" to={'/news'}> <br /> News</Link> </div>

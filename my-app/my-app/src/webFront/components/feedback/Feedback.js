@@ -1,42 +1,43 @@
 import React from "react";
-import './Feedback.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "./Feedback.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import { BsFillCarFrontFill, BsCreditCard, BsPhone } from "react-icons/bs";
 import axios from "axios";
 import { useState } from "react";
 
-
-
-
 function Feedback() {
-
-  function sendEmail() {
-
+  const [feedbackEmail, setFeedbackEmail] = useState("");
+  const [feedbackName, setFeedbackName] = useState("");
+  const [message, setMessage] = useState("");
+  function sendEmail(e) {
+    e.preventDefault();
+    console.log(feedbackEmail, feedbackName, message);
     if (feedbackEmail && feedbackName && message) {
-      axios.post("http://localhost:4500/api/feedback/sendfeedback", {
-        feedbackName,
-        feedbackEmail,
-        message
-
-      })
-        .then(() => alert("Message Send Successfully"))
-
+      axios
+        .post("http://localhost:4500/api/feedback/", {
+          feedbackName,
+          feedbackEmail,
+          message,
+        })
+        .then(() => alert("Message Send Successfully"));
+    } else {
+      alert("fill in all the fields to continue");
     }
-    return alert("fill in all the fields to continue")
   }
-  const [feedbackEmail, setFeedbackEmail] = useState('')
-  const [feedbackName, setFeedbackName] = useState('')
-  const [message, setMessage] = useState('')
 
   return (
     <div>
       <h1 className="feedback-title">Feedback</h1> <br />
       <div className="feedback">
-        <form>
-          <input className="feedback-inp" type="text" placeholder="Name"
+        <form onSubmit={sendEmail}>
+          <input
+            className="feedback-inp"
+            type="text"
+            placeholder="Name"
             value={feedbackName}
-            onChange={(e) => setFeedbackName(e.target.value)} />
+            onChange={(e) => setFeedbackName(e.target.value)}
+          />
 
           <br />
           <input
@@ -54,7 +55,9 @@ function Feedback() {
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
           <br />
-          <button className="feedback-btn" onClick={() => sendEmail()}>Send</button>
+          <button className="feedback-btn" type="submit">
+            Send
+          </button>
         </form>
       </div>
       <br />
