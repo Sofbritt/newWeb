@@ -54,7 +54,7 @@ function Basket() {
   return (
     <div>
       <Others /> <br />
-      <h3 className="basket-title">Basket</h3>{" "}
+      <h3 className="basket-title">Basket</h3>
       <h5 className="clean-basket-title">Clean Basket</h5>
       <div className="clean-basket-div">
         <Carousel showDots={false} responsive={responsive} className="basket-slide"   >

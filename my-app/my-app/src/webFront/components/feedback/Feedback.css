@@ -1,10 +1,35 @@
 .feedback-title {
-  margin-top: 90px;
   display: flex;
   justify-content: center;
   color: rgb(194, 41, 125);
   font-size: 50px;
   font-weight: bold;
+}
+
+.alertFeed {
+  background-color: green;
+  color: white;
+  text-align: center;
+  width: 150px;
+  margin: auto;
+  padding: 6px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+
+}
+
+.x-btn {
+  border-radius: 50%;
+  border: none;
+  width: 30px;
+  height: 30px;
+  color: rgb(255, 255, 255);
+  background-color: red;
+  margin-left: 10px;
+}
+
+.x-btn:hover {
+  background-color: rgb(255, 174, 201);
 }
 
 .feedback {
@@ -86,10 +111,7 @@
 
 @media (max-width: 800px) {
   .feedback-icons {
-
     flex-direction: column;
     align-items: center;
-
   }
-
 }

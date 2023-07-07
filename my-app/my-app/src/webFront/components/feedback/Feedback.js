@@ -7,6 +7,7 @@ import axios from "axios";
 import { useState } from "react";
 
 function Feedback() {
+  const [open, setOpen] = useState(false);
   const [feedbackEmail, setFeedbackEmail] = useState("");
   const [feedbackName, setFeedbackName] = useState("");
   const [message, setMessage] = useState("");
@@ -16,19 +17,38 @@ function Feedback() {
     if (feedbackEmail && feedbackName && message) {
       axios
         .post("http://localhost:4500/api/feedback/", {
-          feedbackName,
-          feedbackEmail,
+          name: feedbackName,
+          email: feedbackEmail,
           message,
         })
-        .then(() => alert("Message Send Successfully"));
+        .then((res) => {
+          if (res.status === 200) {
+            setOpen(true);
+            setTimeout(() => {
+              setOpen(false);
+            }, 4000);
+          } 
+          setFeedbackEmail("");
+          setFeedbackName("");
+          setMessage("");
+        });
     } else {
       alert("fill in all the fields to continue");
     }
   }
 
   return (
-    <div>
+    <div style={{ paddingTop: '40px' }}>
+
       <h1 className="feedback-title">Feedback</h1> <br />
+      {open === true && (
+        <div className="alertFeed">
+          Success
+          <button onClick={() => setOpen(false)} className="x-btn">
+            x
+          </button>
+        </div>
+      )}
       <div className="feedback">
         <form onSubmit={sendEmail}>
           <input

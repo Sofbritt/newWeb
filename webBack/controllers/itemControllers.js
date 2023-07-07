@@ -1,4 +1,4 @@
-const { Item, User } = require("../models/model");
+const { Item, User } = require("./models/model");
 
 const itemCreate = async (req, res) => {
   try {

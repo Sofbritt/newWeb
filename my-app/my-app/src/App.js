@@ -10,6 +10,7 @@ import Basket from "./pages/basket/Basket.js";
 import ShowMore from "./webFront/components/showmore/Showmore.js";
 import News from "./webFront/components/news/News.js";
 import { createContext, useEffect, useState } from "react";
+import Admin from "./webFront/components/adminPage/Admin.js";
 
 export const userInfo = createContext();
 function App() {
@@ -39,6 +40,8 @@ function App() {
             <Route path="/basket" element={<Basket />} />
             <Route path="/showmore/:category" element={<ShowMore />} />
             <Route path="/news" element={<News />} />
+
+            <Route path="/admin" element={<Admin />} />
           </Routes>
           <Footer />
         </BrowserRouter>

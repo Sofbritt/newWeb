@@ -80,11 +80,17 @@
     margin-left: 55px;
 }
 
-.search-icon{
-color: rgb(255, 90, 214);
-font-size: 60px;
+.search-icon {
+    color: rgb(255, 90, 214);
+    font-size: 60px;
 }
 
-.price-sale{
+.price-sale {
     color: green;
+}
+
+@media(max-width:800) {
+    .card-carousel {
+        display: none;
+    }
 }

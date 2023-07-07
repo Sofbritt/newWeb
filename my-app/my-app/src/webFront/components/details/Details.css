@@ -203,6 +203,25 @@
 .short-arrow {
   font-size: 30px;
 }
+.div-added-alert{
+ display: flex;
+ justify-content:end;
+ padding: 10px;
+}
+
+.added-alert {
+  background-color: rgb(73, 211, 73);
+  color: white;
+  width: 120px;
+  border-radius: 25px;
+  text-align: center;
+
+  padding: 6px;
+ 
+  
+  
+
+}
 
 
 @media(max-width:800px) {

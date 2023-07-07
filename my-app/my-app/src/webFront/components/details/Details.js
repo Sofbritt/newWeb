@@ -13,6 +13,7 @@ function Details() {
   const [data, setData] = useState({});
   const params = useParams();
   const [open, setOpen] = useState(false);
+  const [add, setAdd] = useState(false)
 
   const { user } = useContext(userInfo);
 
@@ -23,12 +24,22 @@ function Details() {
         setOpen(false)
       }, 5000)
     } else {
-      axios.post(`http://localhost:4500/api/item/addbasket/${user.id}/${data._id}`);
-      setOpen(false);
+      axios.post(`http://localhost:4500/api/item/addbasket/${user.id}/${data._id}`
+
+
+      ).then((res) => {
+        if (res.status === 200) {
+          setAdd(true);
+          setTimeout(() => {
+            setAdd(false);
+          }, 3000);
+        }
+      });
+
     }
   }
 
-  
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -36,12 +47,14 @@ function Details() {
     });
     axios
       .get("http://localhost:4500/api/item/" + params.id)
-      .then((response) => setData(response.data));
+      .then((response) => setData(response.data)
+      );
   }, [params.id]);
 
   return (
     <div>
       {open === true && <div className="alert">Error</div>}
+
       <div className="link">
         <Link className="link-titles" style={{ order: "0" }} to={"/showmore/cosmetics"}>
           Cosmetics
@@ -53,15 +66,28 @@ function Details() {
           Main Page
         </Link>
       </div>
+      {add === true && (
+<div className="div-added-alert">
+  
+<div className="added-alert">
+          Added
+        </div>
+  </div>
+      )}
       <div>
         <Link className="back-link" to={""}></Link>
       </div>
+
+
+
       <div className="details">
         <img
           alt=""
           src="https://png.pngtree.com/png-vector/20221003/ourmid/pngtree-15-discount-tag-png-image_6262158.png"
           className="saleImg"
-        />{" "}
+        />
+
+
         <br />
         <img alt="" src={data.img} className="details-img" />
         <div className="details-info">
@@ -96,6 +122,7 @@ function Details() {
                 title={!user ? "You must sing in" : "add to basket"}
               >
                 Add in Basket
+
               </button>
             </div>
             <div className="price-main-div">

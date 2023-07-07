@@ -1,12 +1,15 @@
 const mongoose = require('mongoose')
 
-
 const userSchema = new mongoose.Schema({
     name: String,
     email: {
         type: String,
         require: true,
         unique: true
+    },
+    isAdmin:{
+        type: Boolean,
+        default: false
     },
     password: {
         type: String,
@@ -24,10 +27,10 @@ const itemSchema = new mongoose.Schema({
     manufacturer: String,
     price: Number,
     sale: Number,
-    time:{
-        type: Date,
-        default: Date.now
-    }
+    // time:{
+    //     type: Date,
+    //     default: Date.now
+    // }
 })
 
 
